@@ -1,16 +1,20 @@
-<div class = "header">
-    <h1>Guilherme Buss</h1>
-</div>
+<script>
+    import projects from "$lib/projects.json";
+    import Project from "$lib/Project.svelte";
+</script>
 
-<div class = "content">
+<svelte:head>
+  <title>Projetos</title>
+</svelte:head>
+
+<div class="content">
     <h2>Projetos</h2>
 
+    <p>Meus { projects.length } projetos:</p>
 
-    <ul>
-        <li>Hackathon: Dashboard em python utilizando os dados do DataRio, visualizações feitas usando Geopandas, plotly.express, folium.</li>
-        <li>Atualmente desenvolvendo um jogo em GDScript usando Godot pela Altair Game Studio.</li>
-        <li>Relacionados a formação do curso.</li>
-        <li>Relacionados a Empresa Junior da FGV.</li>
-    </ul>
-
+    <div class="projects">
+        {#each projects as p}
+        <Project data={p} hLevel="2" />
+        {/each}
+    </div>
 </div>

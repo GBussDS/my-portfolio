@@ -111,6 +111,14 @@ li {
 	font-size: 60px;
 }
 
+.projects {
+	display:grid;
+    grid-template-columns : repeat(auto-fill, minmax(40em, 3fr));
+    min-width: 60em;
+    max-width: 3fr;
+}
+
+article{    padding: 100px;}
 
 form {
 	width: 80%;

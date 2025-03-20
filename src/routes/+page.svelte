@@ -1,10 +1,11 @@
+<script>
+    import projects from "$lib/projects.json";
+    import Project from "$lib/Project.svelte";
+</script>
+
 <svelte:head>
   <title>Home</title>
 </svelte:head>
-
-<div class = "header">
-    <h1>Guilherme Buss</h1>
-</div>
 
 <div class = "container">
     <div class = "intro-text">
@@ -17,4 +18,10 @@
     <div class = "intro-image">
         <img class="imagem" src="images/eu.jpg" alt="Foto minha.">
     </div>
+</div>
+
+<div class = "projects">
+    {#each projects.slice(0, 3) as p}
+    <Project data={p} hLevel="2" />
+    {/each}
 </div>

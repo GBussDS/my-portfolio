@@ -11,18 +11,21 @@ function $$ (selector, context = document) {
 // currentLink?.classList.add("current");
 
 let pages = [
-    {url: "", title: "Home"},
-    {url: "projects/", title: "Projects"},
-    {url: "cv/", title: "Curriculum Vitae"},
-    {url: "contact/", title: "Contact"},
+    {url: "./", title: "Home"},
+    {url: "projects", title: "Projects"},
+    {url: "cv", title: "Curriculum Vitae"},
+    {url: "contact", title: "Contact"},
     {url: "https://github.com/GBussDS", title: "GitHub"},
 ];  
 
-let nav = document.createElement("div");
-nav.classList.add("links")
-document.body.prepend(nav);
 
-let header = document.querySelector(".header");
+let header = document.createElement("div");
+header.classList.add("header");
+document.body.prepend(header);
+
+let nav = document.createElement("div");
+nav.classList.add("links");
+document.body.prepend(nav);
 
 header.insertAdjacentHTML("afterend", `
     <label class="color-scheme">
@@ -34,6 +37,10 @@ header.insertAdjacentHTML("afterend", `
         </select>
     </label>`
 );
+
+let h1 = document.createElement("h1");
+h1.textContent = "Guilherme Buss";
+header.append(h1);
 
 header.appendChild(nav);
 

@@ -2,11 +2,6 @@
   <title>Currículo</title>
 </svelte:head>
 
-<div class = "header">
-    <h1>Guilherme Buss</h1>
-    
-</div>
-
 <div class = "content">
     <h2>Habilidades</h2>
 
