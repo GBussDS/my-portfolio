@@ -11,10 +11,10 @@ function $$ (selector, context = document) {
 // currentLink?.classList.add("current");
 
 let pages = [
-    {url: "./", title: "Home"},
-    {url: "projects", title: "Projects"},
-    {url: "cv", title: "Curriculum Vitae"},
-    {url: "contact", title: "Contact"},
+    {url: "./my-portfolio", title: "Home"},
+    {url: "my-portfolio/projects", title: "Projects"},
+    {url: "my-portfolio/cv", title: "Curriculum Vitae"},
+    {url: "my-portfolio/contact", title: "Contact"},
     {url: "https://github.com/GBussDS", title: "GitHub"},
 ];  
 
@@ -49,7 +49,7 @@ for (let p of pages) {
     let title = p.title;
 
     if (!ARE_WE_HOME && !url.startsWith("http")) {
-        url = "/my-portfolio/" + url;
+        url = "../" + url;
     }
 
     // Create link and add it to nav
