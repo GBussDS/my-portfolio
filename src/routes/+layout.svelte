@@ -3,12 +3,12 @@ import { base } from "$app/paths";
 import { page } from "$app/stores";
 
 let pages = [
-    {url: "./", title: "Home"},
-    {url: "projects", title: "Projects"},
-    {url: "cv", title: "Curriculum Vitae"},
-    {url: "contact", title: "Contact"},
-    {url: "https://github.com/GBussDS", title: "GitHub"},
-]; 
+    { url: "/", title: "Home" },
+    { url: "/projects", title: "Projects" },
+    { url: "/contact", title: "Contact" },
+    { url: "/cv", title: "Resume" },
+    {url: "https://github.com/gbussds", title:"Github"}
+];
 
 let localStorage = globalThis.localStorage ?? {};
 
