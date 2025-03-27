@@ -79,6 +79,12 @@ body {
 	border-bottom-style: solid;
 }
 
+.header .color-scheme {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
 .container {
 	display: flex;
   	flex-direction: row;
@@ -113,7 +119,7 @@ li {
 
 .projects {
 	display:grid;
-    grid-template-columns : repeat(auto-fill, minmax(40em, 3fr));
+    grid-template-columns : repeat(auto-fill, minmax(60em, 3fr));
     min-width: 60em;
     max-width: 3fr;
 }

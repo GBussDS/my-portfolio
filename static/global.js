@@ -10,61 +10,61 @@ function $$ (selector, context = document) {
 // let currentLink = navLinks.find(a => a.host === location.host && a.pathname === location.pathname);
 // currentLink?.classList.add("current");
 
-let pages = [
-    {url: "./", title: "Home"},
-    {url: "projects", title: "Projects"},
-    {url: "cv", title: "Curriculum Vitae"},
-    {url: "contact", title: "Contact"},
-    {url: "https://github.com/GBussDS", title: "GitHub"},
-];  
+// let pages = [
+//     {url: "./", title: "Home"},
+//     {url: "projects", title: "Projects"},
+//     {url: "cv", title: "Curriculum Vitae"},
+//     {url: "contact", title: "Contact"},
+//     {url: "https://github.com/GBussDS", title: "GitHub"},
+// ];  
 
 
-let header = document.createElement("div");
-header.classList.add("header");
-document.body.prepend(header);
+// let header = document.createElement("div");
+// header.classList.add("header");
+// document.body.prepend(header);
 
-let nav = document.createElement("div");
-nav.classList.add("links");
-document.body.prepend(nav);
+// let nav = document.createElement("div");
+// nav.classList.add("links");
+// document.body.prepend(nav);
 
-header.insertAdjacentHTML("afterend", `
-    <label class="color-scheme">
-        Theme:
-        <select>
-            <option>Auto</option>
-            <option>Light</option>
-            <option>Dark</option>
-        </select>
-    </label>`
-);
+// header.insertAdjacentHTML("afterend", `
+//     <label class="color-scheme">
+//         Theme:
+//         <select>
+//             <option>Auto</option>
+//             <option>Light</option>
+//             <option>Dark</option>
+//         </select>
+//     </label>`
+// );
 
-let h1 = document.createElement("h1");
-h1.textContent = "Guilherme Buss";
-header.append(h1);
+// let h1 = document.createElement("h1");
+// h1.textContent = "Guilherme Buss";
+// header.append(h1);
 
-header.appendChild(nav);
+// header.appendChild(nav);
 
-for (let p of pages) {
-    let url = p.url;
-    let title = p.title;
+// for (let p of pages) {
+//     let url = p.url;
+//     let title = p.title;
 
-    if (!ARE_WE_HOME && !url.startsWith("http")) {
-        url = "../" + url;
-    }
+//     if (!ARE_WE_HOME && !url.startsWith("http")) {
+//         url = "../" + url;
+//     }
 
-    // Create link and add it to nav
-    let a = document.createElement("a");
-    a.href = url;
-    a.textContent = title;
-    nav.append(a);
+//     // Create link and add it to nav
+//     let a = document.createElement("a");
+//     a.href = url;
+//     a.textContent = title;
+//     nav.append(a);
 
-    if (a.host === location.host && a.pathname === location.pathname) {
-        a.classList.add("current");
-    }
-    else if (a.host != location.host) {
-        a.target = "_blank"
-    }
-}
+//     if (a.host === location.host && a.pathname === location.pathname) {
+//         a.classList.add("current");
+//     }
+//     else if (a.host != location.host) {
+//         a.target = "_blank"
+//     }
+// }
 
 let select = document.querySelector("select");
 select.addEventListener("input", function (event) {
