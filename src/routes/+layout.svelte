@@ -10,10 +10,13 @@ let pages = [
     {url: "https://github.com/GBussDS", title: "GitHub"},
 ]; 
 
+let localStorage = globalThis.localStorage ?? {};
+
 let root = globalThis?.document?.documentElement;
-let colorScheme = "light"; 
+let colorScheme = localStorage.colorScheme ?? "light"; 
 
 $: root?.style.setProperty("color-scheme", colorScheme);
+$: localStorage.colorScheme = colorScheme;
 
 </script>
 
@@ -39,3 +42,4 @@ $: root?.style.setProperty("color-scheme", colorScheme);
         </select>
     </label>
 </div>
+<slot />
