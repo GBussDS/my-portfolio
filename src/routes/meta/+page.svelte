@@ -14,7 +14,7 @@
     let commits = [];
 
     onMount(async () => {
-        data = await d3.csv("/loc.csv", row => ({
+        data = await d3.csv("./loc.csv", row => ({
             ...row,
             line: Number(row.line), // or just +row.line
             depth: Number(row.depth),
