@@ -1,74 +1,78 @@
-console.log("IT’S ALIVE!");
+// alert("IT’S ALIVE!");
+
+/* function $$ (selector, context = document) {
+	return Array.from(context.querySelectorAll(selector));
+}
+
+let navLinks = $$("nav a");
+
+let currentLink = navLinks.find(
+    a => a.host === location.host && a.pathname === location.pathname
+);
+
+if (currentLink) { // or if (currentLink !== undefined)
+	currentLink.classList.add("current");
+} */
 
 const ARE_WE_HOME = document.documentElement.classList.contains("home");
 
-function $$ (selector, context = document) {
-    return Array.from(context.querySelectorAll(selector));
-}
+let pages = [
+	{url: ".", title: "Home"},
+	{url: "projects", title: "Projects"},
+	{url: "contact", title: "Contact"},
+    {url: "resume", title: "Resume"},
+    {url: "https://github.com/Mike-Kowalski", title:"Github"}
+];
 
-// let navLinks = $$(".links a");
-// let currentLink = navLinks.find(a => a.host === location.host && a.pathname === location.pathname);
-// currentLink?.classList.add("current");
-
-// let pages = [
-//     {url: "./", title: "Home"},
-//     {url: "projects", title: "Projects"},
-//     {url: "cv", title: "Curriculum Vitae"},
-//     {url: "contact", title: "Contact"},
-//     {url: "https://github.com/GBussDS", title: "GitHub"},
-// ];  
-
-
-// let header = document.createElement("div");
-// header.classList.add("header");
-// document.body.prepend(header);
-
-// let nav = document.createElement("div");
-// nav.classList.add("links");
+// let nav = document.createElement("nav");
 // document.body.prepend(nav);
 
-// header.insertAdjacentHTML("afterend", `
+// for (let p of pages) {
+// 	let url = p.url;
+// 	let title = p.title;
+
+// 	// if (!ARE_WE_HOME && !url.startsWith("http")) {
+// 	// 	url = "../" + url;
+// 	// }
+
+// 	let a = document.createElement("a");
+// 	a.href = url;
+// 	a.textContent = title;
+
+// 	if (a.host === location.host && a.pathname === location.pathname) {
+// 		a.classList.add("current");
+// 	}
+
+// 	if (a.host !== location.host){
+// 		a.target = "_blank";
+// 	}
+
+// 	nav.append(a);
+// }
+
+
+// document.body.insertAdjacentHTML("afterbegin", `
 //     <label class="color-scheme">
 //         Theme:
 //         <select>
-//             <option>Auto</option>
-//             <option>Light</option>
-//             <option>Dark</option>
+//             <option value="light dark"> Automatic </option>
+// 			<option value="light"> Light </option>
+// 			<option value="dark"> Dark </option>
 //         </select>
 //     </label>`
 // );
 
-// let h1 = document.createElement("h1");
-// h1.textContent = "Guilherme Buss";
-// header.append(h1);
+// let select = document.querySelector("select");
 
-// header.appendChild(nav);
 
-// for (let p of pages) {
-//     let url = p.url;
-//     let title = p.title;
+// select.addEventListener("input", function (event) {
+//     document.documentElement.style.setProperty("color-scheme", event.target.value);
+	
+// 	localStorage.colorScheme = event.target.value;
+// });
 
-//     if (!ARE_WE_HOME && !url.startsWith("http")) {
-//         url = "../" + url;
-//     }
 
-//     // Create link and add it to nav
-//     let a = document.createElement("a");
-//     a.href = url;
-//     a.textContent = title;
-//     nav.append(a);
-
-//     if (a.host === location.host && a.pathname === location.pathname) {
-//         a.classList.add("current");
-//     }
-//     else if (a.host != location.host) {
-//         a.target = "_blank"
-//     }
+// if (localStorage.colorScheme) {
+//     document.documentElement.style.setProperty("color-scheme", localStorage.colorScheme);
+//     select.value = localStorage.colorScheme;
 // }
-
-let select = document.querySelector("select");
-select.addEventListener("input", function (event) {
-    localStorage.colorScheme = event.target.value;
-    select.value = localStorage.colorScheme;
-    document.documentElement.style.setProperty("color-scheme", localStorage.colorScheme);
-});

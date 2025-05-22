@@ -28,7 +28,7 @@
 	<svg viewBox="0 0 {width} {barHeight * barData.length}">
 		{#each barData as d, i (d.label)}
 			<rect
-                class:selected={selectedIndex === i}
+					class:selected={selectedIndex === i}
 					class:hovered={hoveredIndex === i}
 					x="0"
 					y={i * barHeight}

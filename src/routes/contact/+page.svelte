@@ -1,27 +1,12 @@
 <svelte:head>
-  <title>Contato</title>
+  <title>Contact me</title>
 </svelte:head>
 
-<div class = "content">
-    <h2>Contato</h2>
+<form action="mailto:foo@example.com" method="GET">
+    <label for="email">Email: <input id="email" type="email" name="text_email"> </label>
+    <label for="subject">Subject: <input id="subject" type="text" name="text_subject"> </label>
+    <label for="body">Body: <textarea id="body" name="text_message"></textarea> </label>
 
-    <p>Me siga nas minhas redes:</p>
-
-    <ul>
-        <li><a href="https://br.linkedin.com/in/guilherme-buss-da-silva-b0b93829b?trk=public_profile_browsemap" target="_blank">LinkedIn</a></li>
-        <li><a href="https://www.instagram.com/bussdasilva/" target="_blank">Instagram</a></li>
-        <li>Email: <a href="mailto:guilherme.buss.silva@gmail.com">guilherme.buss.silva@gmail.com</a></li>
-    </ul>
-
-    <p>Ou mande um email!</p>
-
-    <form action="mailto:guilherme.buss.silva@gmail.com" method="GET">
-        <label for="email"><p>Email:</p></label> <br>
-        <input name="email" type="email"> <br>
-        <label for="subject"><p>Subject:</p></label> <br>
-        <input name="subject" type="text"> <br>
-        <label for="body"><p>Body:</p></label> <br>
-        <textarea name="body"></textarea> <br>
-        <button><p>Submit</p></button>
-    </form>
-</div>
+    <input type="submit" value="Submit" id="button">
+    <!-- <button>Submit</button> -->
+</form>

@@ -3,15 +3,30 @@
     export let hLevel = 2;
 </script>
 
-<!-- <Project data={project} /> -->
+<article>
+    <!-- <h2>{data.title}</h2> -->
+    <svelte:element this={"h" + hLevel}>{data.title}</svelte:element>
+    <img src={data.image} alt="" />
+    <p>
+        {data.description}
+    </p>
+</article>
 
+<style>
+    article{
+        margin: 10px; /*step 4.3*/
+        display: grid; /*step 4.4*/
+        grid-template-rows: subgrid; /*step 4.4*/
+        grid-row: span 3; /*step 4.4*/
+    }
 
-
-<div class="projects">
-    <article>
-        <svelte:element this={"h" + hLevel}>{data.title}</svelte:element>
-        <img src={data.image} alt="" />
-        <p>{data.description}</p>
-        <h3>{data.year}</h3>
-    </article>
-</div>
+    article h2{
+        margin: 0; /*step 4.4*/
+    }
+    p {
+        font-size: 0.7em;
+    }
+    img {
+        height: 12em;
+    }
+</style>
